@@ -1,0 +1,153 @@
+body {
+    background-color: #2e3440;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #eceff4;
+}
+
+header {
+    width: 100%;
+    background-color: #3b4252;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #81a1c1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    flex-grow: 1;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.terminal-window {
+    width: 750px;
+    height: 450px;
+    background-color: #3b4252;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-header {
+    background-color: #4c566a;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.terminal-controls {
+    display: flex;
+}
+
+.control {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.control.close {
+    background-color: #bf616a;
+}
+
+.control.minimize {
+    background-color: #ebcb8b;
+}
+
+.control.maximize {
+    background-color: #a3be8c;
+}
+
+.terminal-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.8em;
+    color: #e5e9f0;
+}
+
+.terminal-content {
+    flex-grow: 1;
+    background-color: #2e3440;
+    overflow: hidden;
+}
+
+#terminal {
+    height: 100%;
+    overflow: auto;
+}
+
+.description {
+    margin: 25px 0;
+    text-align: center;
+    line-height: 1.6;
+    color: #e5e9f0;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-info a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #88c0d0;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #5e81ac;
+}
+
+footer {
+    width: 100%;
+    background-color: #3b4252;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .terminal-window {
+        width: 90%;
+        height: 350px;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-info a {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Terminal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Elias Gauthier</h1>
+        <p class="subtitle">Portfolio interactif</p>
+    </header>
+    
+    <div class="container">
+        <div class="description">
+            <p>Bienvenue sur mon portfolio interactif en mode terminal ! Utilisez des commandes UNIX pour découvrir mes compétences, projets et parcours.</p>
+            <p>Tapez <strong>help</strong> pour voir les commandes disponibles.</p>
+        </div>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <div class="control close"></div>
+                    <div class="control minimize"></div>
+                    <div class="control maximize"></div>
+                </div>
+                <div class="terminal-title">portfolio@elias: ~/</div>
+            </div>
+            <div class="terminal-content">
+                <div id="terminal"></div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <a href="mailto:gauthierelias@proton.me">Email</a>
+            <a href="https://www.linkedin.com/in/elias-gauthier-3baa87317/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/elias-utf8" target="_blank">GitHub</a>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Elias GAUTHIER - Tous droits réservés
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
