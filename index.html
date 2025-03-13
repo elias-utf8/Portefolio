@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,26 +22,54 @@
             <p>Tapez <strong>help</strong> pour voir les commandes disponibles.</p>
         </div>
         
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="terminal-controls">
-                    <div class="control close"></div>
-                    <div class="control minimize"></div>
-                    <div class="control maximize"></div>
+        <div class="main-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <div class="control close"></div>
+                        <div class="control minimize"></div>
+                        <div class="control maximize"></div>
+                    </div>
+                    <div class="terminal-title">portfolio@elias: ~/</div>
                 </div>
-                <div class="terminal-title">portfolio@elias: ~/</div>
+                <div class="terminal-content">
+                    <div id="terminal"></div>
+                </div>
             </div>
-            <div class="terminal-content">
-                <div id="terminal"></div>
+            
+            <div class="help-panel">
+                <h3>Guide rapide</h3>
+                <div class="command-card">
+                    <div class="command-name">ls</div>
+                    <div class="command-desc">Liste les fichiers et dossiers</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-name">cd [dossier]</div>
+                    <div class="command-desc">Entre dans un dossier</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-name">cd ..</div>
+                    <div class="command-desc">Revient au dossier parent</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-name">cat [fichier]</div>
+                    <div class="command-desc">Affiche le contenu d'un fichier</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-name">help</div>
+                    <div class="command-desc">Affiche l'aide</div>
+                </div>
             </div>
         </div>
         
+        
         <div class="contact-info">
-            <a href="mailto:gauthierelias@proton.me">Email</a>
-            <a href="https://www.linkedin.com/in/elias-gauthier-3baa87317/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/elias-utf8" target="_blank">GitHub</a>
+            <a href="mailto:gauthierelias@proton.me"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/elias-gauthier-3baa87317/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/elias-utf8" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </div>
+
     
     <footer>
         &copy; 2025 Elias GAUTHIER - Tous droits réservés
