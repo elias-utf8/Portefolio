@@ -1,35 +1,37 @@
 body {
-    background-color: #2e3440;
-    font-family: 'Arial', sans-serif;
+    background-color: #1A1B26;
+    font-family: 'Source Code Pro', 'JetBrains Mono', monospace;
     margin: 0;
     padding: 0;
-    color: #eceff4;
+    color: #F8F8F2;
     line-height: 1.6;
 }
 
 header {
     width: 100%;
-    background-color: #3b4252;
+    background-color: #24283B;
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding:16px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     margin: 0;
     font-size: 2.5em;
+    color: #5AF78E;
 }
 
 .subtitle {
     font-style: italic;
-    color: #81a1c1;
+    color: #9AEDFE;
     margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 15px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +41,12 @@ h1 {
     text-align: center;
     max-width: 800px;
     margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.description strong {
+    color: #FF6AC1;
+    font-weight: bold;
 }
 
 /* Terminal styling */
@@ -46,21 +54,28 @@ h1 {
     width: 750px;
     max-width: 100%;
     height: 450px;
-    background-color: #3b4252;
+    background-color: #24283B;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+    border: 1px solid #414868;
+    transition: box-shadow 0.3s ease;
+}
+
+.terminal-window.active-terminal {
+    box-shadow: 0 0 25px rgba(90, 247, 142, 0.6);
 }
 
 .terminal-header {
-    background-color: #4c566a;
-    height: 30px;
+    background-color: #1F2335;
+    height: 35px;
     display: flex;
     align-items: center;
     padding: 0 10px;
+    border-bottom: 1px solid #414868;
 }
 
 .terminal-controls {
@@ -72,81 +87,129 @@ h1 {
     height: 14px;
     border-radius: 50%;
     margin-right: 8px;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.control:hover {
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 .control.close {
-    background-color: #bf616a;
+    background-color: #FF5C57;
 }
 
 .control.minimize {
-    background-color: #ebcb8b;
+    background-color: #FDBC2C;
 }
 
 .control.maximize {
-    background-color: #a3be8c;
+    background-color: #2BC840;
 }
 
 .terminal-title {
     flex-grow: 1;
     text-align: center;
-    font-size: 0.8em;
-    color: #e5e9f0;
+    font-size: 0.9em;
+    color: #9AEDFE;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .terminal-content {
     flex-grow: 1;
-    background-color: #2e3440;
+    background-color: #282A36;
     overflow: hidden;
 }
 
 #terminal {
     height: 100%;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-/* Help panel styling */
+.terminal {
+    --color: #F8F8F2;
+    --background: #282A36;
+    --size: 1.2;
+    --link-color: #57C7FF;
+    padding: 10px;
+}
+
+.terminal .terminal-output div div, .cmd .prompt {
+    line-height: 1.5;
+}
+
+.terminal .cmd .cursor.blink {
+    background-color: #5AF78E !important;
+    color: #282A36 !important;
+    animation: terminal-blink 1s infinite steps(1, start);
+}
+
+@keyframes terminal-blink {
+    0%, 100% { background-color: #5AF78E; color: #282A36; }
+    50% { background-color: transparent; color: inherit; }
+}
+
 .help-panel {
-    background-color: #3b4252;
+    background-color: #24283B;
     border-radius: 8px;
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 20px;
-    max-width: 750px;
-    width: 100%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #414868;
+    height: 410px;
+    overflow-y: auto;
 }
 
 .help-panel h3 {
     text-align: center;
     margin-top: 0;
-    color: #88c0d0;
-    margin-bottom: 15px;
+    color: #5AF78E;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    font-size: 1em;
 }
 
 .command-card {
-    background-color: #434c5e;
-    padding: 8px 15px;
+    background-color: #1F2335;
+    padding: 15px;
     border-radius: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
 }
 
 .command-card:hover {
-    background-color: #4c566a;
+    background-color: #2A2F47;
+    border-left: 4px solid #5AF78E;
+    transform: translateX(3px);
 }
 
 .command-name {
     font-weight: bold;
-    color: #a3be8c;
+    color: #FF9F43;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .command-desc {
-    color: #d8dee9;
-    font-size: 14px;
+    color: #9AEDFE;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.command-example {
+    color: #BFBFBF;
+    font-size: 13px;
+    margin-top: 5px;
+    font-style: italic;
 }
 
 .contact-info {
@@ -160,30 +223,37 @@ h1 {
 .contact-info a {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     text-decoration: none;
-    color: #88c0d0;
-    transition: color 0.3s;
+    color: #57C7FF;
+    transition: all 0.3s;
     font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #24283B;
 }
 
 .contact-info a:hover {
-    color: #5e81ac;
+    color: #F8F8F2;
+    background-color: #414868;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer {
     width: 100%;
-    background-color: #3b4252;
+    background-color: #24283B;
     text-align: center;
-    padding: 10px 0;
     font-size: 0.9em;
-    margin-top: 30px;
+    color: #9AEDFE;
+    margin-top: 15px;
+    padding: 8px 0;
 }
 
 .main-content {
     display: flex;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -197,11 +267,76 @@ footer {
 
 .help-panel {
     flex: 1;
-    height: fit-content;
     margin: 0;
     align-self: flex-start;
     position: sticky;
     top: 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1F2335;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #414868;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5AF78E;
+}
+
+.terminal .terminal-output span::selection,
+.terminal .cmd span::selection,
+.terminal .cmd div::selection {
+    background-color: #5AF78E !important;
+    color: #282A36 !important;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(90, 247, 142, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.highlight-command {
+    animation: highlight 1.5s ease;
+}
+
+.terminal-tips {
+    background-color: #1F2335;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 15px;
+    border-left: 3px solid #FF6AC1;
+}
+
+.terminal-tips-title {
+    color: #FF6AC1;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.terminal-tip {
+    margin-bottom: 8px;
+    color: #BFBFBF;
+    font-size: 14px;
+}
+
+.terminal-tip:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-tip code {
+    background-color: #282A36;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #57C7FF;
 }
 
 @media (max-width: 850px) {
@@ -212,5 +347,33 @@ footer {
     .help-panel {
         width: 100%;
         max-width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+    
+    .terminal-window {
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .description {
+        font-size: 0.80em;
+    }
+    
+    .terminal-window {
+        height: 350px;
+    }
+    
+    #terminal {
+        font-size: 13px;
+    }
+    
+    .help-panel {
+        max-height: 250px;
     }
 }
